@@ -207,7 +207,8 @@
             fv
 *********************/
   .fv {
-    margin: 20px auto 0;
+    background: url("../img/fv-sp.jpg") no-repeat center;
+    background-size: contain;
     &-text {
       h1 {
         font-size: 40px;
