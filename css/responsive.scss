@@ -1,0 +1,301 @@
+@media screen and (max-width: 960px) {
+  $color-purple: #b9a9ff;
+  $color-middle: #d8b1fd;
+  $color-pink: #f8bafc;
+  $color-black: #010101;
+  $color-white: #dddddd;
+  $color-dark: #604f70;
+  /********************
+            about
+  *********************/
+  .about {
+    background:  url("../img/about-tb.jpg") no-repeat right bottom;
+    background-size: cover;
+
+    &-contents {
+
+      &-ttl {
+        padding-left: 0;
+        padding-top: 70px;
+      }
+
+      .slider {
+        &-item {
+          height: 490px !important;
+        }
+      }
+    }
+
+  }
+
+  /********************
+            service
+  *********************/
+  .service {
+    background: url("../img/service-tb.jpg") no-repeat top;
+
+    &-contents {
+
+      &-group {
+        flex-direction: column;
+        margin-top: 0;
+
+        &-item {
+          margin: 0 auto 30px;
+          width: 470px;
+        }
+      }
+    }
+  }
+  /********************
+            works
+  *********************/
+  .works {
+    padding-top: 20px;
+
+
+    &-contents-list { 
+      flex-wrap: wrap;
+    }
+
+    .second-list{
+      margin-top: 0;
+    }
+
+    .modal-inner-img{
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+
+      &-pc{
+        width: 370px;
+        margin-bottom: 20px;
+      }
+      &-tb{
+        width: 190px;
+      }
+      &-sp{
+        width: 95px;
+      }
+   }
+  }
+  /********************
+            design
+  *********************/
+  .design {
+    padding-top: 20px;
+  }
+  /********************
+            contact
+  *********************/
+  .contact-contents {
+    width: 90%;
+  }
+  /********************
+            footer
+  *********************/
+  footer p {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  $color-purple: #b9a9ff;
+  $color-middle: #d8b1fd;
+  $color-pink: #f8bafc;
+  $color-black: #010101;
+  $color-white: #dddddd;
+  $color-dark: #604f70;
+
+  .ttl {
+    font-size: 28px;
+  }
+  .about, .service, .works, .design{
+    height: auto;
+  }
+
+  /********************
+            ヘッダー
+*********************/
+
+  /* PC ヘッダー非表示 */
+ .pc-burger-wrapper {
+    display: none;
+  }
+
+  /* SPバーガーボタン表示 */
+  .sp-burger {
+    display: block;
+    z-index: 300;
+    padding: 20px 18px;
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    .bar {
+      display: block;
+      height: 2px;
+      width: 30px;
+      background-color: $color-white;
+      margin-right: 0;
+      margin-left: auto;
+      transition: 0.8s;
+    }
+
+    .bar-top,
+    .bar-mid {
+      margin-bottom: 5px;
+    }
+
+    /* バーガーボタンをクロスに
+            JSでクラスcross追加される */
+    &.cross {
+      .bar-top {
+        transform: rotate(40deg) translate(0px, 9px);
+      }
+      .bar-mid {
+        opacity: 0;
+      }
+      .bar-bottom {
+        transform: rotate(-40deg) translate(0px, -9px);
+      }
+    }
+  }
+
+  /* SPバーガーナビ内 */
+  .sp-open-wrapper {
+    display: none;
+    height: 100vh;
+    z-index: 200;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $color-black;
+    opacity: 0.95;
+    text-align: center;
+
+    .sp-menu {
+      padding-top: 20%;
+
+      &-li {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-40%);
+      }
+      &-item {
+        margin-bottom: 50px;
+        font-size: 20px;
+      }
+    }
+
+    .sp-menu-contact {
+      margin-top: 70px;
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      &-btn {
+        font-size: 20px;
+        padding: 12px 60px;
+      }
+    }
+  }
+
+  /********************
+            fv
+*********************/
+  .fv {
+    margin: 20px auto 0;
+    &-text {
+      h1 {
+        font-size: 40px;
+      }
+      h3 {
+        font-size: 20px;
+        line-height: 28px;
+      }
+    }
+  }
+  /********************
+            about
+  *********************/
+  .about-contents {
+      padding-left: 0;
+      &-ttl {
+        padding-left: 20px;
+      }
+      .slider-item {
+        height: 600px !important;
+        margin-right: 15px;
+
+        h6 {
+          font-size: 13px;
+        }
+        hr {
+          width: 90%;
+        }
+        ul,
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+  /********************
+             service
+  *********************/
+  .service {
+    margin-top: 0;
+    padding:  0 0 100px;
+
+    &-contents {
+      &-ttl {
+        padding-left: 20px;
+      }
+      &-group {
+        &-item {
+          width: 280px;
+
+          h5{
+            font-size: 13px;
+          }
+          p{
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+  /********************
+       works/design
+  *********************/
+  .works, .design {
+    padding-top: 30px;
+ }
+ .works-contents, .design-contents{
+   padding-bottom: 120px;
+ }
+  /********************
+             contact
+  *********************/
+  .contact{
+    padding-bottom: 100px;
+
+    .paw-01{
+      font-size: 80px;
+    }
+  
+    .paw-02{
+      font-size: 80px;
+      top: 50px;
+      right: 20px;
+      bottom: unset;
+      left: unset;
+      /*グラデーション*/
+      background: -webkit-linear-gradient(0deg, $color-purple 30%, $color-pink);//背景色にグラデーションを指定
+      -webkit-background-clip: text;//テキストでくり抜く
+      -webkit-text-fill-color: transparent;//くり抜いた部分は背景を表示
+    }
+  }
+}

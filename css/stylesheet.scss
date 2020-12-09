@@ -1,0 +1,668 @@
+@charset "utf-8";
+
+$color-purple: #b9a9ff;
+$color-middle: #d8b1fd;
+$color-pink: #f8bafc;
+$color-black: #010101;
+$color-white: #dddddd;
+$color-dark: #604f70;
+
+body {
+  font-family: "Montserrat", "Noto Sans JP", sans-serif;
+  letter-spacing: 0.08em;
+  color: $color-white;
+  font-weight: 300;
+  background-color: $color-black;
+}
+
+a {
+  color: inherit;
+
+  &:hover,
+  &:focus,
+  &:visited {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+.ttl {
+  font-size: 60px;
+  font-family: 'Pathway Gothic One', sans-serif;
+  letter-spacing: 7px;
+}
+
+.link-btn {
+  font-weight: 500;
+  color: $color-white !important;
+  border: 1px solid $color-white;
+  border-radius: 10px;
+
+  &:hover {
+    color: $color-black !important;
+    background-color: $color-middle;
+    border: 1px solid $color-middle;
+  }
+}
+
+.arrow-a {
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
+  height: 100px;
+  cursor: pointer;
+
+  /* 矢印アニメーション */
+  .arrow {
+    display: block;
+    position: absolute;
+    left: 48%;
+    bottom: 5%;
+    transform: translateX(-48%) translateY(-5%);
+    -webkit-transform: translateX(-48%) translateY(-5%);
+    padding: 70px 0 0;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-delay: 1.7s;
+    -moz-animation-delay: 1.7s;
+    animation-delay: 1.7s;
+    animation-iteration-count: infinite;
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+      }
+      to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+      }
+    }
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+
+    /* 矢印CSSコード */
+    &:before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      border-bottom: solid 4px $color-white;
+      -webkit-transform: rotate(37deg);
+      transform: rotate(37deg);
+      position: absolute;
+      top: 50%;
+      left: 0;
+    }
+
+    /* 矢印CSSコード */
+    &:after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      border-bottom: solid 4px $color-white;
+      -webkit-transform: rotate(-37deg);
+      transform: rotate(-37deg);
+      position: absolute;
+      top: 50%;
+      left: 4px;
+    }
+  }
+}
+
+/* JSでクラス追加される。モダルオープン時にno-scroll. */
+.no-scroll {
+  overflow: hidden;
+}
+
+/********************
+            ヘッダー
+*********************/
+.pc-burger-wrapper {
+  /*  PCバーガーボタン表示 */
+  .pc-burger {
+    z-index: 300;
+    padding: 30px 58px;
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    .bar {
+      display: block;
+      height: 2px;
+      width: 30px;
+      background-color: $color-white;
+      margin-right: 0;
+      margin-left: auto;
+      transition: 0.8s;
+    }
+
+    .bar-top,
+    .bar-mid {
+      margin-bottom: 5px;
+    }
+
+    /* バーガーボタンをクロスにJSでクラス追加される */
+    &.cross {
+      .bar-top {
+        transform: rotate(40deg) translate(0px, 9px);
+      }
+      .bar-mid {
+        opacity: 0;
+      }
+      .bar-bottom {
+        transform: rotate(-40deg) translate(0px, -9px);
+      }
+    }
+  }
+
+  /* PC バーガーナビ内 */
+  .pc-open-wrapper {
+    display: none; /* デフォルト非表示 */
+    z-index: 200;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    .pc-open-100 {
+      display: flex;
+      height: 100vh;
+
+      .pc-open-60 {
+        width: 60%;
+      }
+
+      .pc-menu {
+        padding-top: 20%;
+        width: 40%;
+
+        background-color: $color-black;
+        opacity: 0.95;
+        text-align: center;
+
+        &-li {
+          list-style: none;
+        }
+        &-item {
+          margin-bottom: 30px;
+          font-size: 20px;
+
+          a {
+            position: relative;
+
+            /* hoverでアンダーライン */
+            &:after {
+              content: "";
+              position: absolute;
+              left: 50%;
+              bottom: -5px;
+              width: 60%;
+              height: 1px;
+              opacity: 0;
+              background-color: $color-middle;
+              transform: translate(-50%, 0);
+              transition: all 0.3s ease-in-out;
+            }
+
+            &:hover::after {
+              width: 120%;
+              opacity: 1;
+            }
+          }
+        }
+
+        &-contact {
+          font-size: 20px;
+          margin-top: 110px;
+
+          &-btn {
+            padding: 10px 60px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* SPバーガー＆バーガーメニュー非表示 */
+.sp-burger,
+.sp-open-wrapper {
+  display: none;
+}
+
+/********************
+            fv
+*********************/
+.fv {
+  background: url("../img/fv.jpg") no-repeat top center;
+  background-size: contain;
+  height: 100vh;
+  margin: -20px auto 20px;
+
+  .arrow:before, .arrow:after{
+    border-bottom: 4px solid $color-middle;
+  }
+}
+
+/********************
+            about
+*********************/
+.about {
+  height: 100vh;
+  width: 100%;
+  background: url("../img/about-bg.jpg") no-repeat right bottom;
+  background-size: cover;
+  position: relative;
+
+  &-sp {
+    /* SP用非表示 */
+    display: none;
+  }
+
+  &-contents {
+    line-height: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    max-width: 1480px;
+    padding-left: 70px;
+    position: relative;
+
+    &-ttl {
+      padding-left: 105px;
+      padding-top: 105px;
+      margin-top: 0;
+    }
+
+    /* スライダー */
+    .slider {
+      padding-top: 20px;
+      /* スライダー中身 */
+      &-item {
+        padding-top: 55px;
+        max-width: 700px;
+        margin-left: 18%;
+        margin-right: 15px;
+        outline: none;
+        height: 380px !important;
+
+        h6 {
+          font-style: italic;
+          font-size: 15px;
+        }
+        hr {
+          width: 417px;
+          margin: 0 0 10px;
+        }
+        ul,
+        p {
+          font-size: 13px;
+        }
+      }
+
+      /* スライダーdots */
+      .slick-dots {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 120px;
+        left: 8%;
+
+        li button {
+          font-size: 0;
+          margin-right: 10px;
+          width: 10px;
+          height: 10px;
+          border-radius: 5px;
+          background: $color-purple;
+          border: none;
+          outline: none;
+        }
+
+        .slick-active button {
+          background: $color-white;
+        }
+      }
+    }
+  }
+}
+
+/********************
+            service
+*********************/
+.service {
+  background: url("../img/service-bg.jpg") no-repeat center top;
+  background-size: cover;
+  margin: 0 auto;
+  height: 100vh;
+  position: relative;
+
+  &-contents {
+    padding: 30px;
+    font-weight: 400;
+    color: $color-dark;
+    max-width: 1480px;
+    margin: 0 auto;
+
+    &-ttl {
+      text-align: center;
+      text-shadow: 0px 0px 5px $color-white;
+    }
+
+    &-group {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 90px;
+
+      &-item {
+        width: 270px;
+
+        h5 {
+          font-size: 20px;
+          margin-bottom: 5px;
+        }
+
+        hr {
+          margin-top: 0;
+          margin-bottom: 14px;
+          border-top: 2px solid #9b6dc8;
+        }
+      }
+    }
+  }
+}
+/********************
+            works
+*********************/
+.works {
+  padding-top: 50px;
+  background: url("../img/works.jpg") no-repeat center right;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  
+  &-ttl{
+    color: #a0a0a0;
+    text-align: center; /* ttl 中央よせ */
+    text-shadow: 0 0 5px $color-black;
+    margin-bottom: 50px;
+  }
+
+  &-contents {
+
+    &-list { 
+      max-width: 1000px;
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+
+      &-item {
+        width: 400px;
+        margin: 10px;
+        box-shadow: 0 0 10px $color-white;
+        background-color: $color-black; /* hover時のopacityBG用 */
+
+
+        .modal-btn:hover {
+          opacity: 0.4;
+        }
+      }
+    }
+
+    .second-list{
+      margin-top: 40px;
+    }
+
+    /* モダル内 */
+    .modal {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 500;
+      overflow: scroll;
+
+      &-close {
+        /*以下 × のCSSコード＆position*/
+        cursor: pointer;
+        display: block;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+
+        &:before,
+        &:after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 1px;
+          background: $color-white;
+          transform: rotate(45deg);
+          transform-origin: 0% 50%;
+          position: absolute;
+          top: calc(14% - 5px);
+          left: 14%;
+        }
+
+        &:after {
+          transform: rotate(-45deg);
+          transform-origin: 100% 50%;
+          left: auto;
+          right: 14%;
+        }
+      }
+
+      &-inner {
+        max-width: 960px;
+        margin: 30px auto;
+
+        &-img {
+          width: 90%;
+          margin: 0 auto;
+          display: flex;
+          align-items: flex-end;
+
+          > img {
+            vertical-align: bottom;
+          }
+
+          &-pc {
+            width: 530px;
+          }
+          &-tb {
+            width: 250px;
+          }
+          &-sp {
+            width: 130px;
+          }
+        }
+
+        &-contents {
+          max-width: 70%;
+          margin: 30px auto;
+
+          h5 {
+            font-size: 20px;
+            margin-bottom: 30px;
+            font-weight: 700;
+          }
+
+          p a {
+            text-decoration: underline;
+          }
+
+          &-link {
+            display: inline-block;
+            color: $color-middle;
+            border: 1px solid $color-middle;
+            padding: 12px;
+            border-radius: 6px;
+
+            &:hover {
+              background-color: $color-purple;
+              color: $color-black;
+            }
+          }
+        }
+      }
+    }
+  }
+  }
+/********************
+            design
+*********************/
+.design{
+  padding-top: 50px;
+  background: url("../img/design.jpg") no-repeat center right;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+
+  &-ttl{
+    color: $color-dark;
+    text-align: center;
+    text-shadow: 0 0 5px $color-white;
+  }
+
+  &-contents{
+    max-width: 960px;
+    margin: 40px auto 0;
+    text-align: center;
+
+    img{
+      width: 290px;
+      margin: 5px;
+    }
+  }
+
+}
+  
+
+/********************
+            contact
+*********************/
+.contact {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  text-align: center;
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 80px;
+
+  &-ttl{
+    color: $color-middle;
+  }
+
+  &-contents {
+    margin: 60px auto 0;
+
+    &-btns {
+      margin-top: 50px;
+
+      &-btn {
+        a {
+          padding: 10px 36px;
+
+          i {
+            margin-right: 6px;
+          }
+        }
+      }
+    }
+  }
+  /* paw */
+  .paw-01{
+    font-size: 200px;
+    transform:rotate(20deg);
+    transform-origin:0 0;
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    /*グラデーション*/
+    background: -webkit-linear-gradient(0deg, $color-pink, $color-purple 70%);//背景色にグラデーションを指定
+    -webkit-background-clip: text;//テキストでくり抜く
+    -webkit-text-fill-color: transparent;//くり抜いた部分は背景を表示
+  }
+
+  .paw-02{
+    font-size: 100px;
+    transform:rotate(-10deg);
+    transform-origin:0 0;
+    position: absolute;
+    bottom: 200px;
+    left: 0;
+    /*グラデーション*/
+    background: -webkit-linear-gradient(0deg, $color-purple 30%, $color-pink);//背景色にグラデーションを指定
+    -webkit-background-clip: text;//テキストでくり抜く
+    -webkit-text-fill-color: transparent;//くり抜いた部分は背景を表示
+  }
+}
+
+/********************
+            footer
+*********************/
+footer {
+  hr {
+    border-top: 1px solid gray;
+    margin-top: 0;
+  }
+
+  .sns {
+    margin: 15px;
+    text-align: right;
+
+    .fa-twitter,
+    .fa-instagram {
+      background-color: #55acee;
+      color: #fff;
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      line-height: 50px !important;
+      text-align: center;
+      margin: 5px;
+    }
+
+    .fa-twitter {
+      background-color: #55acee;
+      font-size: 25px;
+    }
+
+    .fa-instagram {
+      background: -webkit-linear-gradient(135deg, #427eff 0%, #f13f79 70%)
+        no-repeat;
+      background: linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+      font-size: 30px;
+    }
+
+    .fa-twitter:hover,
+    .fa-instagram:hover {
+      opacity: 0.8;
+    }
+
+    .fa-chevron-up {
+      margin: 0 10px 0 30px;
+      padding: 10px;
+      font-size: 20px;
+    }
+  }
+
+  p {
+    text-align: center;
+    margin-top: -30px;
+    margin-bottom: 15px;
+  }
+}

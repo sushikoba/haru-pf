@@ -1,0 +1,258 @@
+@charset "UTF-8";
+@media screen and (max-width: 960px) {
+  /********************
+            about
+  *********************/
+  .about {
+    background: url("../img/about-tb.jpg") no-repeat right bottom;
+    background-size: cover;
+  }
+  .about-contents-ttl {
+    padding-left: 0;
+    padding-top: 70px;
+  }
+  .about-contents .slider-item {
+    height: 490px !important;
+  }
+  /********************
+            service
+  *********************/
+  .service {
+    background: url("../img/service-tb.jpg") no-repeat top;
+  }
+  .service-contents-group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 0;
+  }
+  .service-contents-group-item {
+    margin: 0 auto 30px;
+    width: 470px;
+  }
+  /********************
+            works
+  *********************/
+  .works {
+    padding-top: 20px;
+  }
+  .works-contents-list {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .works .second-list {
+    margin-top: 0;
+  }
+  .works .modal-inner-img {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .works .modal-inner-img-pc {
+    width: 370px;
+    margin-bottom: 20px;
+  }
+  .works .modal-inner-img-tb {
+    width: 190px;
+  }
+  .works .modal-inner-img-sp {
+    width: 95px;
+  }
+  /********************
+            design
+  *********************/
+  .design {
+    padding-top: 20px;
+  }
+  /********************
+            contact
+  *********************/
+  .contact-contents {
+    width: 90%;
+  }
+  /********************
+            footer
+  *********************/
+  footer p {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .ttl {
+    font-size: 28px;
+  }
+  .about, .service, .works, .design {
+    height: auto;
+  }
+  /********************
+            ヘッダー
+*********************/
+  /* PC ヘッダー非表示 */
+  .pc-burger-wrapper {
+    display: none;
+  }
+  /* SPバーガーボタン表示 */
+  .sp-burger {
+    display: block;
+    z-index: 300;
+    padding: 20px 18px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* バーガーボタンをクロスに
+            JSでクラスcross追加される */
+  }
+  .sp-burger .bar {
+    display: block;
+    height: 2px;
+    width: 30px;
+    background-color: #dddddd;
+    margin-right: 0;
+    margin-left: auto;
+    -webkit-transition: 0.8s;
+    transition: 0.8s;
+  }
+  .sp-burger .bar-top,
+  .sp-burger .bar-mid {
+    margin-bottom: 5px;
+  }
+  .sp-burger.cross .bar-top {
+    -webkit-transform: rotate(40deg) translate(0px, 9px);
+            transform: rotate(40deg) translate(0px, 9px);
+  }
+  .sp-burger.cross .bar-mid {
+    opacity: 0;
+  }
+  .sp-burger.cross .bar-bottom {
+    -webkit-transform: rotate(-40deg) translate(0px, -9px);
+            transform: rotate(-40deg) translate(0px, -9px);
+  }
+  /* SPバーガーナビ内 */
+  .sp-open-wrapper {
+    display: none;
+    height: 100vh;
+    z-index: 200;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #010101;
+    opacity: 0.95;
+    text-align: center;
+  }
+  .sp-open-wrapper .sp-menu {
+    padding-top: 20%;
+  }
+  .sp-open-wrapper .sp-menu-li {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-40%);
+            transform: translateX(-50%) translateY(-40%);
+  }
+  .sp-open-wrapper .sp-menu-item {
+    margin-bottom: 50px;
+    font-size: 20px;
+  }
+  .sp-open-wrapper .sp-menu-contact {
+    margin-top: 70px;
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  .sp-open-wrapper .sp-menu-contact-btn {
+    font-size: 20px;
+    padding: 12px 60px;
+  }
+  /********************
+            fv
+*********************/
+  .fv {
+    margin: 20px auto 0;
+  }
+  .fv-text h1 {
+    font-size: 40px;
+  }
+  .fv-text h3 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  /********************
+            about
+  *********************/
+  .about-contents {
+    padding-left: 0;
+  }
+  .about-contents-ttl {
+    padding-left: 20px;
+  }
+  .about-contents .slider-item {
+    height: 600px !important;
+    margin-right: 15px;
+  }
+  .about-contents .slider-item h6 {
+    font-size: 13px;
+  }
+  .about-contents .slider-item hr {
+    width: 90%;
+  }
+  .about-contents .slider-item ul,
+  .about-contents .slider-item p {
+    font-size: 12px;
+  }
+  /********************
+             service
+  *********************/
+  .service {
+    margin-top: 0;
+    padding: 0 0 100px;
+  }
+  .service-contents-ttl {
+    padding-left: 20px;
+  }
+  .service-contents-group-item {
+    width: 280px;
+  }
+  .service-contents-group-item h5 {
+    font-size: 13px;
+  }
+  .service-contents-group-item p {
+    font-size: 13px;
+  }
+  /********************
+       works/design
+  *********************/
+  .works, .design {
+    padding-top: 30px;
+  }
+  .works-contents, .design-contents {
+    padding-bottom: 120px;
+  }
+  /********************
+             contact
+  *********************/
+  .contact {
+    padding-bottom: 100px;
+  }
+  .contact .paw-01 {
+    font-size: 80px;
+  }
+  .contact .paw-02 {
+    font-size: 80px;
+    top: 50px;
+    right: 20px;
+    bottom: unset;
+    left: unset;
+    /*グラデーション*/
+    background: -webkit-linear-gradient(0deg, #b9a9ff 30%, #f8bafc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+/*# sourceMappingURL=responsive.css.map */
