@@ -32,15 +32,15 @@ a:hover, a:focus, a:visited {
 
 .link-btn {
   font-weight: 500;
-  color: #dddddd !important;
-  border: 1px solid #dddddd;
+  color: #010101 !important;
+  background-color: #f8bafc;
+  border: 1px solid #f8bafc;
   border-radius: 10px;
 }
 
 .link-btn:hover {
-  color: #010101 !important;
-  background-color: #d8b1fd;
-  border: 1px solid #d8b1fd;
+  color: #f8bafc !important;
+  background-color: #010101;
 }
 
 .arrow-a {
@@ -550,15 +550,8 @@ a:hover, a:focus, a:visited {
 
 .works-contents .modal-inner-contents-link {
   display: inline-block;
-  color: #d8b1fd;
-  border: 1px solid #d8b1fd;
   padding: 12px;
   border-radius: 6px;
-}
-
-.works-contents .modal-inner-contents-link:hover {
-  background-color: #b9a9ff;
-  color: #010101;
 }
 
 /********************

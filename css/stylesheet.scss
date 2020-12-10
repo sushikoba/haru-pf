@@ -41,14 +41,14 @@ a {
 
 .link-btn {
   font-weight: 500;
-  color: $color-white !important;
-  border: 1px solid $color-white;
+  color: $color-black !important;
+  background-color: $color-pink;
+  border: 1px solid $color-pink;
   border-radius: 10px;
 
   &:hover {
-    color: $color-black !important;
-    background-color: $color-middle;
-    border: 1px solid $color-middle;
+    color: $color-pink !important;
+    background-color: $color-black;
   }
 }
 
@@ -506,16 +506,10 @@ a {
 
           &-link {
             display: inline-block;
-            color: $color-middle;
-            border: 1px solid $color-middle;
             padding: 12px;
             border-radius: 6px;
-
-            &:hover {
-              background-color: $color-purple;
-              color: $color-black;
             }
-          }
+
         }
       }
     }
