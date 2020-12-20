@@ -6,6 +6,7 @@
   .about {
     background: url("../img/about-tb.jpg") no-repeat right bottom;
     background-size: cover;
+    font-weight: 400;
   }
   .about-contents-ttl {
     padding-left: 0;
@@ -13,12 +14,14 @@
   }
   .about-contents .slider-item {
     height: 490px !important;
+    padding-top: 25px;
   }
   /********************
             service
   *********************/
   .service {
     background: url("../img/service-tb.jpg") no-repeat top;
+    background-size: cover;
   }
   .service-contents-group {
     -webkit-box-orient: vertical;
