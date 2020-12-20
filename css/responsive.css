@@ -69,6 +69,16 @@
   *********************/
   .design {
     padding-top: 20px;
+    height: auto;
+  }
+  .design-contents {
+    padding-bottom: 120px;
+  }
+  .design-contents .img-pc {
+    display: none;
+  }
+  .design-contents .img-tb {
+    display: block;
   }
   /********************
             contact
@@ -237,9 +247,6 @@
   }
   .works-contents {
     padding-bottom: 200px;
-  }
-  .design-contents {
-    padding-bottom: 120px;
   }
   /********************
              contact

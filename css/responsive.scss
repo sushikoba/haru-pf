@@ -86,6 +86,18 @@
   *********************/
   .design {
     padding-top: 20px;
+    height: auto;
+
+    &-contents{
+      padding-bottom: 120px;
+      
+      .img-pc{
+        display: none;
+      }
+      .img-tb{
+        display: block;
+      }
+    }
   }
   /********************
             contact
@@ -280,9 +292,7 @@
  .works-contents{
    padding-bottom: 200px;
  }
- .design-contents{
-   padding-bottom: 120px;
- }
+
   /********************
              contact
   *********************/

@@ -572,14 +572,14 @@ a:hover, a:focus, a:visited {
 }
 
 .design-contents {
-  max-width: 960px;
+  max-width: 1300px;
   margin: 40px auto 0;
+  padding: 0 15px;
   text-align: center;
 }
 
-.design-contents img {
-  width: 290px;
-  margin: 5px;
+.design-contents .img-tb {
+  display: none;
 }
 
 /********************

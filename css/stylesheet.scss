@@ -532,13 +532,13 @@ a {
   }
 
   &-contents{
-    max-width: 960px;
+    max-width: 1300px;
     margin: 40px auto 0;
+    padding: 0 15px;
     text-align: center;
 
-    img{
-      width: 290px;
-      margin: 5px;
+    .img-tb{
+      display: none;
     }
   }
 
