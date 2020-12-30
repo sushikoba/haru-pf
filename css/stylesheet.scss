@@ -54,7 +54,7 @@ a {
 
 .arrow-a {
   position: absolute;
-  bottom: 5%;
+  bottom: 2%;
   width: 100%;
   height: 100px;
   cursor: pointer;
@@ -378,6 +378,35 @@ a {
           margin-bottom: 14px;
           border-top: 2px solid #9b6dc8;
         }
+
+        .price span{
+          font-size: 17px; 
+        }
+
+        /* SALE */ 
+
+        .sale{ 
+          padding: 4px 8px;
+          color: $color-pink;
+          background-color: $color-black;
+          border-radius: 6px;
+          font-weight: 500;
+          animation: Flash1 2s infinite;
+        }
+        
+        /* アニメーション */
+        @keyframes Flash1{
+          50%{
+            opacity: 0;
+          }
+        }
+
+        .sale-price{
+          font-weight: 500;
+          padding-right: 12px;
+        }
+
+
       }
     }
   }
@@ -515,14 +544,46 @@ a {
     }
   }
   }
+
 /********************
-            design
+            banner
+*********************/
+.banner{
+  padding-top: 50px;
+  background: url("../img/banner-bg.png") no-repeat ;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+
+  &-ttl{
+    color: $color-purple;
+    text-align: center; /* ttl 中央よせ */
+    text-shadow: 0 0 5px $color-black;
+    margin-bottom: 100px;
+  }
+
+  &-contents{
+    max-width: 1350px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+
+    &-img{
+      width: 400px;
+      img{
+        box-shadow: 0 0 10px $color-white;
+      }
+    }
+  }
+}
+/********************
+            thumbnail
 *********************/
 .design{
   padding-top: 50px;
+  padding-bottom: 120px;
   background: url("../img/design.jpg") no-repeat center right;
   background-size: cover;
-  height: 100vh;
   position: relative;
 
   &-ttl{

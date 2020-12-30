@@ -46,6 +46,10 @@
         &-item {
           margin: 0 auto 30px;
           width: 470px;
+
+          p{
+            margin-bottom: 5px;
+          }
         }
       }
     }
@@ -81,16 +85,39 @@
       }
    }
   }
+
   /********************
-            design
+            banner
+  *********************/
+  .banner{
+    padding-top: 20px;
+
+    &-ttl{
+      margin-bottom: 50px;
+    }
+
+   &-contents{
+    flex-wrap: wrap;
+
+     &-img{
+      width: 100%;
+      margin-bottom: 20px;
+      text-align: center;
+      img{
+        width: 320px;
+      }
+     }
+ 
+    }
+  }
+  /********************
+            thumbnail
   *********************/
   .design {
     padding-top: 20px;
-    height: auto;
 
     &-contents{
-      padding-bottom: 120px;
-      
+
       .img-pc{
         display: none;
       }
@@ -274,10 +301,13 @@
           width: 280px;
 
           h5{
-            font-size: 13px;
+            font-size: 15px;
           }
           p{
             font-size: 13px;
+          }
+          .price span{
+            font-size: 15px;
           }
         }
       }

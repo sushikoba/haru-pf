@@ -34,6 +34,9 @@
     margin: 0 auto 30px;
     width: 470px;
   }
+  .service-contents-group-item p {
+    margin-bottom: 5px;
+  }
   /********************
             works
   *********************/
@@ -65,14 +68,31 @@
     width: 95px;
   }
   /********************
-            design
+            banner
+  *********************/
+  .banner {
+    padding-top: 20px;
+  }
+  .banner-ttl {
+    margin-bottom: 50px;
+  }
+  .banner-contents {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .banner-contents-img {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .banner-contents-img img {
+    width: 320px;
+  }
+  /********************
+            thumbnail
   *********************/
   .design {
     padding-top: 20px;
-    height: auto;
-  }
-  .design-contents {
-    padding-bottom: 120px;
   }
   .design-contents .img-pc {
     display: none;
@@ -234,10 +254,13 @@
     width: 280px;
   }
   .service-contents-group-item h5 {
-    font-size: 13px;
+    font-size: 15px;
   }
   .service-contents-group-item p {
     font-size: 13px;
+  }
+  .service-contents-group-item .price span {
+    font-size: 15px;
   }
   /********************
        works/design
